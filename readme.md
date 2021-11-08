@@ -1,33 +1,35 @@
-# Concepts
-- Abstraction
-- Hierarchical
-- Textual
+# Objectives
+- Tracking - Changes using Drag n' Drop solutions are not trackable
+- Collaboration - Diagrams can be updated based on PRs
+- Single Source Of Truth - Its common to have documentation adjacent to source code then why not diagrams as well 
 
-# The C's
-### Level 1
-A System **Context** diagram provides a starting point, showing how the software system in scope fits into the world around it.
+# C4 Model
+### Requirements
+- Install Visual Studio Code
+- Install `jebbs.plantuml` from Visual Studio Code Marketplace
+- Run PlantUML Server locally `docker run -d -p 8089:8080 plantuml/plantuml-server:jetty`
 
-*Primary elements:* The software system in scope.
+### Usage
+- Open `.puml` file
+- Open VS Code Action Prompt 
+- Select `PlantUML : Preview With Current Diagram`
+- See the live preview of the diagram on the right side as you make changes
 
-*Supporting elements:* People (e.g. users, actors, roles, or personas) and software systems (external dependencies) that are directly connected to the software system in scope. Typically these other software systems sit outside the scope or boundary of your own software system, and you don’t have responsibility or ownership of them.
+### Known Issues
+- [No valid diagram found here!](https://github.com/qjebbs/vscode-plantuml/issues/62) - Do not leave any new line in your `.puml` files so that your cursor is always inside the diagram code
 
+# Diagrams
+### Installation
+- graphviz
+    - Windows : `choco install graphviz`
+    - MacOS : `brew install graphviz`
+- diagrams
+    - `pip install diagrams`
+- Visual Studio Code
+    - Jupyter extension `ms-toolsai.jupyter`
+    - Python extension `ms-python.python`
 
-### Level 2
-A **Container** diagram zooms into the software system in scope, showing the high-level technical building blocks. A "container" is a runnable/deployable unit e.g. SPA, Web API, Database, etc. It's a simple, high-level technology focused diagram that shows how responsibilities are distributed across containers.
-
-*Primary elements:* Containers within the software system in scope.
-
-*Supporting elements:* People and software systems directly connected to the containers.
-
-
-### Level 3
-A **Component** diagram zooms into an individual container, showing the components inside it. A "Component" is a **module** of the container that has a certain role e.g. Auth Module, SignInController. 
-
-*Scope:* A single container.
-
-*Primary elements:* Components within the container in scope.
-
-*Supporting elements:* Containers (within the software system in scope) plus people and software systems directly connected to the components.
-
-### Level 4
-**Code** diagram is optional. It can be auto-generated from source code.
+### Usage
+- Open any `.ipynb` file
+- Write `diagrams` code in python
+- `Run` the Jupyter notebook and it will generate image of diagram
