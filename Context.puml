@@ -1,0 +1,12 @@
+@startuml Visa Card To Wallet - System
+!include C4_Context.puml
+
+Person(customerRef, "Customer")
+System(mainRef, "Mainframe")
+System_Ext(visaRef, "Visa Gateway")
+
+Rel(customerRef, mainRef, "Requests Top-up from Visa Card")
+Rel(mainRef, visaRef, "Redirects Customer to Visa Gateway")
+Rel(visaRef, mainRef, "Saves Transaction Data")
+Rel(mainRef, customerRef, "Result")
+@enduml

@@ -1,0 +1,22 @@
+@startuml Visa Card To Wallet - Middleware
+!include C4_Container.puml
+
+System(mobileAppRef, "Customer App")
+System(fintechRef, "Fintech")
+System_Ext(visaRef, "Visa Gateway")
+
+Container(spaRef, "SPA", "JS")
+Container(apiRef, "API", "Java")
+ContainerDb(dbRef, "Database", "Dynamo")
+ContainerDb(cacheRef, "Cache", "Redis")
+ContainerDb(logsRef, "Logs", "CloudWatch")
+
+Rel(spaRef, mobileAppRef, "Gets Frontend", "WebView")
+BiRel(mobileAppRef, apiRef, "API Calls", "HTTP/JSON")
+Rel(mobileAppRef, visaRef, "Redirects Customer")
+BiRel(apiRef, fintechRef, "API Calls", "SOPA/XML")
+BiRel(apiRef, dbRef, "Read/Write", "SDK")
+Rel(apiRef, cacheRef, "Read", "SDK")
+Rel(apiRef, logsRef, "Write", "SDK")
+Rel(visaRef, apiRef, "Transaction Response", "WebHook")
+@enduml
