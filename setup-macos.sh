@@ -65,3 +65,7 @@ pip install diagrams
 # install vs code extensions for jupyter
 code --install-extension "ms-toolsai.jupyter"
 code --install-extension "ms-python.python"
+
+# install python kernel for Jupyter
+pip install ipykernel
+
