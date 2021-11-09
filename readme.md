@@ -1,7 +1,10 @@
 # Objectives
 - Tracking - Changes using Drag n' Drop solutions are not trackable
 - Collaboration - Diagrams can be updated based on PRs
-- Single Source Of Truth - Its common to have documentation adjacent to source code then why not diagrams as well 
+- Single Source Of Truth - Diagrams adjacent to documentation and source code in same repository 
+
+# Setup
+- Run `setup-macos.sh`
 
 # C4 Model
 ### Requirements
