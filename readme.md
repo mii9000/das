@@ -18,9 +18,9 @@
     A working example on how to document your architecture and/or system diagrams as code
     <br />
     ·
-    <a href="https://github.com/bKash-developer/bkash-diagrams-as-code-boilerplate/issues">Report Bug</a>
+    <a href="https://github.com/mii9000/das/issues">Report Bug</a>
     ·
-    <a href="https://github.com/bKash-developer/bkash-diagrams-as-code-boilerplate/issues">Request Feature</a>
+    <a href="https://github.com/mii9000/das/issues">Request Feature</a>
   </p>
 </div>
 
@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/bKash-developer/bkash-diagrams-as-code-boilerplate)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/mii9000/das)
 
 Diagrams are often created using visual tools. If its online, then its on another website associated with a specific account. If its offline then its on someone's desktop. In both cases, there is no single source to get the up-to-date document at any given time. There could be multiple versions circulating within the organization spreading misinformation.
 
