@@ -1,5 +1,4 @@
 {
     "plantuml.server": "http://localhost:8089",
     "plantuml.render": "PlantUMLServer",
-    "plantuml.diagramsRoot": "base",
 }

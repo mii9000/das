@@ -31,9 +31,9 @@ then
     exit
 fi
 
-# run plantuml server
-echo "docker run plantuml-server"
-docker run -d -p 8089:8080 plantuml/plantuml-server:jetty
+# pull plantuml server
+echo "docker pull plantuml-server"
+docker pull plantuml/plantuml-server:latest
 
 # install graphviz
 echo "install graphviz"
