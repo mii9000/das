@@ -1,4 +1,9 @@
-!include C4_Component.puml
+' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include %get_variable_value("RELATIVE_INCLUDE")/C4_Component.puml
+!else
+  !include C4_Component.puml
+!endif
 
 ' Scope: Interactions in an enterprise, software system or container.
 ' Primary and supporting elements: Depends on the diagram scope -

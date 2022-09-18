@@ -1,4 +1,9 @@
-!include C4_Container.puml
+' convert it with additional command line argument -DRELATIVE_INCLUDE="." to use locally
+!if %variable_exists("RELATIVE_INCLUDE")
+  !include %get_variable_value("RELATIVE_INCLUDE")/C4_Container.puml
+!else
+  !include C4_Container.puml
+!endif
 
 ' Scope: A single container.
 ' Primary elements: Components within the container in scope.
@@ -32,7 +37,7 @@ UpdateElementStyle("external_component", $EXTERNAL_COMPONENT_BG_COLOR, $COMPONEN
 ' Layout
 ' ##################################
 
-SetDefaultLegendEntries("person\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component")
+SetDefaultLegendEntries("person\nsystem\ncontainer\ncomponent\nexternal_person\nexternal_system\nexternal_container\nexternal_component\nenterprise_boundary\nsystem_boundary\ncontainer_boundary\nboundary")
 
 !procedure LAYOUT_WITH_LEGEND()
 hide stereotype
@@ -53,18 +58,18 @@ endlegend
 ' ##################################
 
 !function $getComponent($label, $techn, $descr, $sprite)
-!if ($descr == "") && ($sprite == "")
-!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
-!endif
-!if ($descr == "") && ($sprite != "")
-!return $getSprite($sprite)+'\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//'
-!endif
-!if ($descr != "") && ($sprite == "")
-!return '=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
-!endif
-!if ($descr != "") && ($sprite != "")
-!return $getSprite($sprite)+'\n=='+$label+'\n//<size:'+$TECHN_FONT_SIZE+'>['+$techn+']</size>//\n\n '+$descr
-!endif
+  !$component = ""
+  !if ($sprite != "")
+    !$component = $component + $getSprite($sprite) + '\n'
+  !endif
+  !$component = $component + '==' + $label
+  !if ($techn != "")
+    !$component = $component + '\n//<size:' + $TECHN_FONT_SIZE + '>[' + $techn + ']</size>//'
+  !endif
+  !if ($descr != "")
+    !$component = $component + '\n\n' + $descr
+  !endif
+  !return $component
 !endfunction
 
 !unquoted procedure Component($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
