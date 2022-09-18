@@ -1,5 +1,5 @@
 @startuml Visa Card To Wallet - System
-!include C4_Context.puml
+!include <C4/C4_Context.puml>
 
 Person(customerRef, "Customer")
 System(mainRef, "Mainframe")

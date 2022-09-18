@@ -1,5 +1,5 @@
 @startuml Visa Card To Wallet - Middleware
-!include C4_Container.puml
+!include <C4/C4_Container.puml>
 
 System(mobileAppRef, "Customer App")
 System(fintechRef, "Fintech")

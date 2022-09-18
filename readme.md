@@ -108,19 +108,12 @@ The script will try to install all the dependencies if not present but there mig
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Start with [C4](https://c4model.com/) diagrams using PlantUML. Run the PlantUML server using `docker run --name plantuml -d -p 8089:8080 plantuml/plantuml-server:latest`. Follow the examples [Context](context.puml), [Container](container.puml) and [Component](component.puml) in this repo. Also check out the [samples](https://github.com/plantuml-stdlib/C4-PlantUML/tree/master/samples) in [C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML). Sync with that repo using:
-
-    ```bash
-    git clone https://github.com/plantuml-stdlib/C4-PlantUML ~/C4-PlantUML
-    cp ~/C4-PlantUML/*.puml ./base
-    cp -r ~/C4-PlantUML/.vscode .
-    grep -rl '' | xargs -d '\n' sed -i 's/https:\/\/raw.githubusercontent.com\/plantuml-stdlib\/C4-PlantUML\/master\///g'
-    ```
+1. Start with [C4](https://c4model.com/) diagrams using PlantUML. Run the PlantUML server using `docker run --name plantuml -d -p 8089:8080 plantuml/plantuml-server:latest` (port 8089 to match `plantuml.server` in vscode settings). Follow the examples [Context](context.puml), [Container](container.puml) and [Component](component.puml) in this repo. Also check out the [samples](https://github.com/plantuml-stdlib/C4-PlantUML/tree/master/samples) in [C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML). C4-PlantUML is part of [plantuml's rich standard library](https://github.com/plantuml/plantuml-stdlib).
 
     - To preview the diagrams : Open [VS Code Command Pallette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and Select `PlantUML : Preview current diagram`
-    - To generate images using scripts, download plantuml jar file from [github](https://github.com/plantuml/plantuml/releases) and use `java -Dplantuml.include.path='base' -jar plantuml.jar ...`, see [documentation](https://plantuml.com/command-line) for details.
+    - To generate images using terminal / shell scripts, download plantuml jar file from [github](https://github.com/plantuml/plantuml/releases) and use `java -jar plantuml.jar ...`, see [documentation](https://plantuml.com/command-line) for details.
 
-3. End with system diagrams using [Diagrams](https://diagrams.mingrammer.com/). Follow the example [diagram](diagram.ipynb) in this repo.
+2. End with system diagrams using [Diagrams](https://diagrams.mingrammer.com/). Follow the example [diagram](diagram.ipynb) in this repo.
     - To preview simply `Run All` the Jupyter notebook from top toolbar
 
 <p align="right">(<a href="#top">back to top</a>)</p>
